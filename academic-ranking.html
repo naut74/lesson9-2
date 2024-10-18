@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Ranking</title>
+</head>
+<body>
+    <input type="number" id="mid" placeholder="Nhập điểm giữa kì">
+    <input type="number" id="end" placeholder="Nhập điểm cuối kì">
+    <button type="button" onclick="avarage();">Học Lực</button>
+    <p id="result5"></p>
+
+    <script>
+        function avarage(){
+            let mid=parseFloat(document.getElementById('mid').value);
+            let end=parseFloat(document.getElementById('end').value);
+            let result5;
+            let tb;
+            if (mid>0&&mid<10&&end>0 && end<10){
+                tb=(mid+end)/2;
+                if(tb>=8){
+                    result5='Giỏi';
+                } else if (tb<8&&tb>=6.5){
+                    result5='Khá';
+                } else if (tb<6.5&&tb>=5){
+                    result5='Trung Bình';
+                } else {
+                    result5='Yếu!';
+                }
+            } else {
+                result5='ERROR!!!!';
+            }
+            document.getElementById('result5').innerHTML='Điểm trung bình là: '+ tb +' . Học lực'+result5;
+        }
+    </script>
+</body>
+</html>

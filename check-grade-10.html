@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Age</title>
+</head>
+<body>
+    <input type="number" id="Age" placeholder="Nhập tuổi của bạn">
+    <button onclick="checkage();" type="button">Check</button>
+    <p id="result2"></p>
+
+    <script>
+        function checkage(){
+            let age=document.getElementById('Age').value;
+            let enough;
+            if(age>0){
+                enough=(age>=15)?'Bạn đã đủ tuổi vào lớp 10':'Bạn nhỏ tuổi quá!'
+            }
+            document.getElementById('result2').innerHTML=enough;
+        }
+    </script>
+</body>
+</html>

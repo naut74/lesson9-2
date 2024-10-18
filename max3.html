@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="number1" placeholder="Nhập số thứ nhất">
+    <input type="number" id="number2" placeholder="Nhập số thứ hai">
+    <input type="number" id="number3" placeholder="Nhập số thứ ba">
+    <button type="button" onclick="max()">Max</button>
+    <p id="result4"></p>
+
+    <script>
+        function max(){
+            let nb1=document.getElementById('number1').value;
+            let nb2=document.getElementById('number2').value;
+            let nb3=document.getElementById('number3').value;
+            let max=Math.max(nb1,nb2,nb3);
+            document.getElementById('result4').innerHTML='Số lớn nhất là'+max;
+            
+    
+        }
+        
+        
+    </script>
+
+</body>
+</html>

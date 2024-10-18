@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Hoa Hồng</title>
+    <style>
+        body{
+            padding: 50px;
+            margin: 0;
+        }
+        input{
+            margin: 12px;
+            width: 250px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="doanhso" placeholder="Nhập doanh số tháng này: (triệu)">
+    <button type="button" onclick="tinhhoahong()">Tính hoa hồng (triệu)</button>
+    <p id="result"></p>
+
+    <script>
+        function tinhhoahong(){
+            let ds=parseFloat(document.getElementById('doanhso').value);
+            let hh;
+            if(ds>0){
+                if(ds<100){
+                    hh=0;
+                } else if (ds<150){
+                    hh=ds*0.1;
+                } else if(ds<200){
+                    hh=ds*0.2;
+                }else{
+                    hh=hs*0.04;
+                }
+            }
+            else{
+                hh='Không có!'
+            }
+            document.getElementById('result').innerHTML='Hoa hồng tháng này là: '+hh+' triệu';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero</title>
+    <style>
+        body{
+            margin: 12px;
+        }
+        input{
+            margin: 12px;
+            width: 250px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="randomnumber" placeholder="Enter your favorite number">
+    <button type="button" onclick="checknumber()">Check</button>
+    <p id="result3"></p>
+    <script>
+        function checknumber(){
+            let randomnumber=document.getElementById('randomnumber').value;
+            let result3;
+            if(randomnumber==0){
+                result3='NOT 0';
+            }
+            else if (randomnumber>0){
+                result3='Đây là số lớn hơn 0';
+            }
+            else{
+                result3='Đây là số bé hơn 0';
+            }
+            document.getElementById('result3').innerHTML=result3;
+        }
+     
+    </script>
+</body>
+</html>
