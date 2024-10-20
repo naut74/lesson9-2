@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+    <style>
+        body{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chuyển từ độ C sang độ F</h1>
+    <input type="number" id="C" placeholder="Nhập nhiệt độ (độ C)">
+    <button type="button" onclick="changeF();">Đổi độ C sang độ F</button>
+    <p id="result1"></p>
+     <script>
+        function changeF(){
+            let c=parseFloat(document.getElementById('C').value);
+            document.getElementById('result1').innerHTML='Result: '+(c*5/9+32)+' F';
+        }
+     </script>
+
+     <hr>
+     <h1>Chuyển từ mét sang feet</h1>
+     <input type="number" id="met" placeholder="Nhập độ dài (mét)">
+    <button type="button" onclick="changefeet();">Đổi mét ra feet</button>
+    <p id="result2"></p>
+    <script>
+        function changefeet(){
+            let met=parseFloat(document.getElementById('met').value);
+            document.getElementById('result2').innerHTML='Result: '+met*3.2808+' feet';
+        }
+    </script>
+
+    <hr>
+    <h1>Tính diện tích hình vuông</h1>
+    <input type="number" id="canha" placeholder="Nhập chiều dài cạnh ">
+    <button type="button" onclick="square();">Diện tích hình vuông</button>
+    <p id="result3"></p>
+     <script>
+        function square(){
+            let canha=parseFloat(document.getElementById('canha').value);
+            document.getElementById('result3').innerHTML='Result: '+(canha*canha)+' (m)';
+        }
+     </script>
+     
+     <hr>
+     <h1>Tính diện tích hình chữ nhật</h1>
+    <input type="number" id="chieudai" placeholder="Nhập chiều dài ">
+    <input type="number" id="chieurong" placeholder="Nhập chiều rộng ">
+    <button type="button" onclick="rectangle();">Diện tích hình chữ nhật</button>
+    <p id="result4"></p>
+     <script>
+        function rectangle(){
+            let chieudai=parseFloat(document.getElementById('chieudai').value);
+            let chieurong=parseFloat(document.getElementById('chieurong').value);
+            document.getElementById('result4').innerHTML='Result: '+(chieudai*chieurong);
+        }
+     </script>
+
+    <h1>Tính diện tích hình tam giác</h1>
+    <input type="number" id="canhkea" placeholder="Nhập cạnh a">
+    <input type="number" id="canhkeb" placeholder="Nhập cạnh b">
+    <button type="button" onclick="triple();">Diện tích tam giác</button>
+    <p id="result7"></p>
+    <script>
+        function triple(){
+            let canhkea=parseFloat(document.getElementById('canhkea').value);
+            let canhkeb=parseFloat(document.getElementById('canhkeb').value);
+            document.getElementById('result7').innerHTML='Result: '+(canhkea*canhkeb/2);
+        }
+    </script>
+
+     <hr>
+     <h1>Giải phương trình bậc 1</h1>
+    <input type="number" id="biena" placeholder="Nhập a">
+    <input type="number" id="bienb" placeholder="Nhập b">
+    <button type="button" onclick="equaltion();">Giải</button>
+    <p id="result5"></p>
+    <p id="result51"></p>
+     <script>
+        function equaltion(){
+            let biena=parseFloat(document.getElementById('biena').value);
+            let bienb=parseFloat(document.getElementById('bienb').value);
+            if(biena != 0){
+                document.getElementById('result5').innerHTML='Phương trình là f(x)='+ biena +'x+'+bienb;
+                document.getElementById('result51').innerHTML='x = '+((-bienb)/biena);
+            }
+             else if (bienb == 0) {
+                document.getElementById('result5').innerHTML = 'Phương trình có vô số nghiệm.';
+                document.getElementById('result51').innerHTML = '';
+              } else {
+                document.getElementById('result5').innerHTML='Phương trình không tồn tại';
+                document.getElementById('result51').innerHTML='';
+            }
+        }
+     </script>
+
+     <hr>
+     <h1>Giải phương trình bậc 2</h1>
+     <input type="number" id="a" placeholder="Nhập a">
+     <input type="number" id="b" placeholder="Nhập b">
+     <input type="number" id="c" placeholder="Nhập c">
+     <button type="button" onclick="equaltion2();">Giải</button>
+     <p id="result62"></p>
+     <p id="result6"></p>
+      <script>
+         function equaltion2(){
+             let a=parseFloat(document.getElementById('a').value);
+             let b=parseFloat(document.getElementById('b').value);
+             let c=parseFloat(document.getElementById('c').value);
+             let delta=b*b-4*a*c;
+             let x1,x2;
+            if(a != 0){
+                document.getElementById('result62').innerHTML='Phương trình có dạng là:'+a+'x^2 + '+b+'x + '+c;
+                if(delta<0){
+                    result6=' vô nghiệm';
+                } 
+                else if(delta==0){
+                    x1=x2=(-b)/(2*a);
+                    x1=x1.toFixed(2);
+                    result6=' có 1 nghiệm là x1 = x2 = '+ x1;
+                }
+                else{
+                    x1=(-b+ Math.sqrt(delta))/(2*a);
+                    x2=(-b- Math.sqrt(delta))/(2*a);
+                    x1=x1.toFixed(2);
+                    x2=x2.toFixed(2);
+                    result6='có 2 nghiệm là x1 = '+ x1 + ' và x2 = '+ x2;
+                }
+                document.getElementById('result6').innerHTML='Phương trình'+result6;
+            } 
+            else {
+                document.getElementById('result62').innerHTML='Phương trình bâc 2 không tồn tại';
+                document.getElementById('result6').innerHTML=''
+            }
+            
+        }
+      </script>
+
+    <hr>
+    <h1>Kiểm tra số tuổi của 1 người</h1>
+    <input type="number" id="tuoi" placeholder="Nhập số tuổi">
+    <button type="button" onclick="checktuoi();">Kiểm tra</button>
+    <p id="result8"></p>
+     <script>
+        function checktuoi(){
+            let tuoi=parseInt(document.getElementById('tuoi').value);
+            if(tuoi>0 && tuoi<120){
+                document.getElementById('result8').innerHTML='Đây là tuổi của 1 người';
+            }
+            else {
+                document.getElementById('result8').innerHTML='Đây không phải tuổi của 1 người';
+            }
+        }
+     </script>
+
+    <hr>
+    <h1>Kiểm tra tam giác</h1>
+    <input type="number" id="nba" placeholder="Nhập a">
+    <input type="number" id="nbb" placeholder="Nhập b">
+    <input type="number" id="nbc" placeholder="Nhập c">
+    <button type="button" onclick="triplecheck();">Giải</button>
+    <p id="result9"></p>
+    <script>
+        function triplecheck(){
+            let nba=parseFloat(document.getElementById('nba').value);
+            let nbb=parseFloat(document.getElementById('nbb').value);
+            let nbc=parseFloat(document.getElementById('nbc').value);
+            if(nba>0 && nbb>0 && nbc>0){
+                if(((nba+nbb)>nbc) && ((nba+nbc)>nbb) && ((nbc+nbb)>nba)){
+                    document.getElementById('result9').innerHTML='Đây là 1 tam giác';
+                } else {
+                    document.getElementById('result9').innerHTML='Đây là không phải 1 tam giác';
+                }
+            }
+            else{
+                document.getElementById('result9').innerHTML='Cạnh của 1 tam giác phải lớn hơn 0';
+            }
+        }
+    </script>
+
+    <hr>
+    <h1>Tính giá điện</h1>
+    <input type="number" id="dien" style="width: 200px;" placeholder="Lượng điện tiêu thụ (kWh)">
+    <button type="button" onclick="tiendien();">Tính tiền</button>
+    <p id="result10"></p>
+    <p id="result101"></p>
+    <script>
+        function tiendien(){
+            let dien=parseFloat(document.getElementById('dien').value);
+            let thanggia;
+            if(dien > 0){
+                if (dien<50) {
+                    thanggia=1728; 
+                } else if ( dien<100){
+                    thanggia=1786;
+                }else if ( dien<200){
+                    thanggia=2074;
+                }else if ( dien<300){
+                    thanggia=2612;
+                }else if ( dien<400){
+                    thanggia=2819;
+                }else {
+                    thanggia=3015;
+                }
+                document.getElementById('result10').innerHTML='Giá điện tháng này là '+(dien*thanggia)+' (VNĐ)';
+                document.getElementById('result101').innerHTML='Giá điện tháng này sau khi tính thuế là '+(dien*thanggia*1.1)+' (VNĐ)';    
+            }
+            else {
+                document.getElementById('result10').innerHTML='Số điện phải lớn hơn 0';
+                document.getElementById('result101').innerHTML=''
+            }
+        }
+    </script>
+
+    <hr>
+    <!-- Ví dụ:
+    Giả sử một người có tổng thu nhập chịu thuế là 35 triệu đồng/tháng và có 1 người phụ thuộc. Tính thuế TNCN của người này như sau:
+
+    Thu nhập chịu thuế: 35 triệu đồng
+    Giảm trừ gia cảnh:
+    Bản thân: 11 triệu đồng
+    Người phụ thuộc: 4,4 triệu đồng
+    Thu nhập tính thuế = 35 triệu - 11 triệu - 4,4 triệu = 19,6 triệu đồng
+    Áp dụng biểu thuế lũy tiến:
+
+    5 triệu đầu tiên: 5 triệu × 5% = 250.000 đồng
+    5 triệu tiếp theo: 5 triệu × 10% = 500.000 đồng
+    8 triệu tiếp theo: 8 triệu × 15% = 1.200.000 đồng
+    1,6 triệu còn lại: 1,6 triệu × 20% = 320.000 đồng
+    Tổng số thuế thu nhập cá nhân phải nộp = 250.000 + 500.000 + 1.200.000 + 320.000 = 2.270.000 đồng/tháng -->
+    
+    <h1>Tính thuế thu nhập cá nhân</h1>
+    <input type="number" style="width: 250px;" name="thunhap" id="thunhap" placeholder="Nhập thu nhập của bạn (triệu đồng)">
+    <button type="button"  onclick="thuethunhap()">Tính thuế</button>
+    <p>Thuế chưa bao gồm người phụ thuộc</p>
+    <p id="result11"></p>
+    <script>
+        function thuethunhap(){
+            let thunhap=document.getElementById('thunhap').value;
+            let thue=thunhap-11;
+            if(thunhap>11){
+                if(thunhap<5){
+                    thue=thunhap*0.05;
+                }
+                else if (thunhap<10){
+                    thue=(thunhap-5)*0.1+0.25;
+                } 
+                else if (thunhap<18){
+                    thue=(thunhap-10)*0.15+0.75;
+                }
+                else if(thunhap<32){
+                    thue = (thunhap-18)*0.2+1.95;
+                }
+                else if(thunhap<52){
+                    thue = (thunhap-32)*0.25+4.75;
+                }
+                else if(thunhap<80){
+                    thue = (thunhap-52)*0.3+9.75;
+                }
+                else {
+                    thue = (thunhap-80)*0.35+18.15;
+                }
+                thue=thue.toFixed(2);
+                document.getElementById('result11').innerHTML='Thuế thu nhập cá nhân của bạn là: '+thue+' (triệu đồng)';
+            }
+            else{
+                document.getElementById('result11').innerHTML='Bạn không phải chịu thuế thu nhập cá nhân'
+            }
+        }
+    </script>
+
+    <hr>
+    <h1>Lãi kép</h1>
+    <!--
+            A = P * (1+r/n)^(n*t) 
+    A: Số tiền sau thời gian đầu tư (bao gồm cả gốc và lãi).
+    P: Số tiền gốc ban đầu.
+    r: Lãi suất hàng năm (dưới dạng thập phân, ví dụ 8% thì r = 0.08).
+    n: Số lần ghép lãi trong 1 năm (ví dụ: nếu lãi ghép hàng tháng thì n = 12).
+    t: Thời gian gửi (tính theo năm).    -->
+
+    <input type="number" id="tiengoc" placeholder="Số tiền gốc (VNĐ)">
+    <input type="number" id="laisuat" placeholder="Lãi suất (%) ">
+    <input type="number" id="thoigiangui" placeholder="Thời gian gửi (năm)">
+    <button type="button" onclick="laikep();">Tính lãi</button>
+    <p id="result12"></p>
+    <script>
+        function laikep() {
+            let tiengoc=parseFloat(document.getElementById('tiengoc').value);
+            let laisuat=parseFloat(document.getElementById('laisuat').value);
+            let thoigiangui=parseFloat(document.getElementById('thoigiangui').value);
+            laisuat=laisuat/100;
+            let result12=tiengoc* Math.pow((1 + laisuat/12),(12*thoigiangui));
+            result12=result12.toFixed(3);
+            document.getElementById('result12').innerHTML='Lãi suất: '+result12+' VNĐ';                 
+        }
+    </script>
+
+    
+</body>
+</html>
